@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            créer trois variables :
+            a = "Bonjour les amis"
+            b = "un peu de texte"
+            classe = ["primary", "secondary", "danger"]
+
+            veuillez afficher dans la console le texte suivante (en utilisant les variables précédentes ) :
+
+            <article>
+                <h2 class="danger">Bonjour les amis</h2>
+                <p id="primary">un peu de texte</p>
+            </article>
+        */
+        let a = "Bonjour les amis";
+        let b = "un peu de texte" ;
+        let classe = ["primary", "secondary", "danger"] ;
+
+        let phrase = `
+            <article>
+                <h2 class="${classe[2]}">${a}</h2>
+                <p class="${classe[0]}">${b}</p>
+            </article>
+        `;
+        console.log(phrase);
+    </script>
+</body>
+</html>
