@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // objet 
+
+        // un objet variable comple 
+        // contenir des valeurs 
+
+        let a = {
+            nom : "lettre", // string
+            valeur : 1234 , // number
+            test : 12 > 6 , // boolean
+            liste : [  "pomme" , "poire" , "abricot"] , // tableau
+            proprietaire : { // objet
+                nom : "Moi",
+                age : 23
+            }
+        };
+
+        // dans les objets vous pouvez aussi stocker des fonctions 
+        // fonction dans une objet => méthode 
+
+        let b = {
+            action1 : function(){ 
+                // syntaxe classique pour créer une méthode
+                console.log("je suis la méthode action 1");
+            },
+            action2(){
+                // méthode courte
+                console.log("je suis la méthode 2");
+            },
+            action3 : () => { // attention : entre la clé et la valeur 
+                // arrow function
+                console.log("avec des arrow function");
+            }
+        }; // js uniquement 
+
+        b.action1(); // appel de la méthode 1
+        b.action2() // appel de la méthode 2
+        b.action3() // // appel de la méthode 3
+
+        // utiliser des propriétés d'une objet dans la méthode 
+
+        let voiture = {
+            marque : "Citroen",
+            modele : "C4" ,
+            description : function( anneeAchat ){
+                // this 
+                console.log("je conduis une " + this.marque + " " + this.modele + " acheté en " + anneeAchat);
+            } ,
+            // ATTENTION this 
+            // correspond au CONTEXTE d'exécution 
+            // this est FAUX AMI 
+            // quelle variable appeler la méthode qui contient this
+            presentation(){
+                console.log(this);
+                console.log( `ma voiture est une ${this.marque}` )
+            },
+            demarrer : ( ) => {
+                console.log(this);
+                console.log( `${ this.marque} fait VROM ` )
+            }
+        }
+
+        voiture.description( 2012 );
+        voiture.presentation();
+        voiture.demarrer();
+        // objet global => window 
+        // pas possible la valeur de this est perdue 
+        // closure => fonction dans une fonction 
+
+        // => cas pratique pour demain 
+
+        // https://www.freecodecamp.org/
+        // essayer de faire les 4 premiers exercices 
+        // de la page suivante : https://www.w3resource.com/javascript-exercises/javascript-functions-exercises.php
+        // vous avez les solutions disponibles 
+        // 
+
+    </script>
+</body>
+</html>
