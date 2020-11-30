@@ -78,6 +78,32 @@
         }
 
         hello();
+
+        // écriture ternaire   ? :
+        // écriture abrégé
+        let h = ( 2 > 3 ) ? "c'est vrai " : "c'est faux" ;
+        console.log(h)
+        // console.log(( 2 > 3 ) ? "c'est vrai " : "c'est faux")
+
+        // version longue 
+        let i ; 
+        if( 2 > 3 ){
+            i = "c'est vrai ";
+        } else {
+            i = "c'est faux";
+        }
+        console.log(i)
+        let contenu = {
+            titre : "Titre article"
+        }
+        let largeur = 1200 ; //
+        // XAML
+        let article = `
+            <h1 class="${ (largeur > 1000) ? "danger" : "success" }">
+                ${ contenu.title || contenu.titre }
+            </h1>
+        `;
+        console.log( article );
     </script>
 </body>
 </html>
