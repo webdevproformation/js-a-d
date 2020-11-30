@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // boolean 
+        // type de base de javascript 
+
+        // résultat d'une comparaison entre deux valeurs 
+
+        let a = 2 ;
+        let b = 3 ;
+
+        let test1 = a > b ; 
+        // test1 est de type boolean => false 
+        console.log(test1);
+
+        let c = "2";
+        let d = 2 ;
+
+        let test2 = c == d ; // test2 = true
+        //transtypage "2" == 2 
+        //transtypage "2" == "2"
+        // => true 
+        console.log(test2); // true
+
+        let e = 3 ;
+
+        let test3 = c == e ;
+        //          "2" == 3
+        //transtypage  "2" == "3"
+        // false 
+        console.log(test3); // false
+
+        let test4 = c === d ;
+        // interdit à javascript de transtype
+        //           "2" === 2 
+        // false 
+        console.log(test4); // false  // comparaison stricte
+        // type ET valeur 
+
+        let test5 = c === e ;
+        // interdit à javascript de transtype
+        //          "2" === 3 // React (utilisent beaucoup cette syntaxe)
+        // false 
+        console.log( test5 );
+
+        // && || ( )
+
+        // objet 
+
+        let objet = {
+            nom : "Voiture"
+        };
+
+        // est ce qu'une propriété existe ?? 
+        let test6 = objet.marque ; // undefined  => false
+
+        if(test6){
+            // exécute pas car test6 contient undefined => false 
+            console.log("pas exécuté ");
+        }
+
+        let test7 = objet.marque || objet.nom;
+        // javascript 
+        console.log(test7);
+
+        // || des booleans
+        // paramètre par défaut (ES6)
+        function hello( param ){
+            let p = param || 10 ;
+            console.log(p * 2);
+        }
+
+        hello();
+    </script>
+</body>
+</html>
+
+<!-- -->
