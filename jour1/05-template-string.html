@@ -1,0 +1,99 @@
+<!-- 05-template-string.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // gogogogo
+        // concaténation => le fait d'additionner deux chaines de caractères
+
+        // méthodes classiques (avant l'ES6 - 2015)
+        // utiliser les syntaxes suivantes
+
+        let phrase1 = "texte " + " autre texte" ; // double quote et le symbole + 
+
+        let phrase2 = 'autre phrase ' + 'deuxième texte' ; // quote simple avec le symbole + 
+
+        // avec cette syntaxe j'ai besoin d'écrire une apostrophe dans une chaine de caractère qui commence et fini par une simple quote, il faut l'échapper avec le symbole \ doit être collé à l'apostrophe
+
+        let phrase3 = 'j\'écris une chaine de caractère';
+        let phrase4 = "Victor Hugo a dit \"J'aime Paris\""; 
+
+        // nouvelle syntaxe qui a été introduite depuis 2015 => template string 
+        // nouveau symbole pour commencer et finir les chaines de caractères 
+        // `` back quote = accent grave
+
+        // windows => altgr + 7 en haut espace
+        // windows => altgr + 7 deux fois `
+        
+        let phrase5 = `une phrase avec la nouvelle syntaxe ES6` ; 
+
+        // cette nouvelle syntaxe dispose de nombreux avantages
+
+        // plus facile d'ajouter des variables dans ce type de syntaxe => faire des concaténations
+
+        let a = "javascript";
+        let b = "ES6";
+
+        let phrase6 = `j'utilise ${a} ${b}` ; // nouvelle manière de faire de la concaténation
+        // pas besoin d'utiliser le symbole + beaucoup main d'échappement à réaliser
+        // ${ } ne fonctionne que dans les template string `` 
+        console.log(phrase6);
+
+        // 2ème avantage important => vous pouvez faire des sauts de lignes dans la chaine de caractères
+
+        let html = `<h1>${a}</h1>
+                    <p>${b}</p>`;
+        // possibilité de sauter des lignes dans votre chaine de caractères !! 
+
+        console.log(html);
+        // BNP Paribas
+        // pas nécessaire que toutes tes utilisateurs disposent des nouvelle version de FF // Chrome 
+        // array 
+        let courses = ["pomme", "poire", "abricot" ] //.toString() ;
+
+        // j'utilise la nouvelle syntaxe pour écrire j'ai acheté des abricots
+
+        console.log(`j'ai acheté des ${courses[2]}`);
+        console.log(`j'ai acheté des ${courses}`);
+
+        // objet littéral
+        let voiture = {
+            marque : "Peugeot",
+            modele : 206,
+            anneeAchat : 2005
+        };
+        // on peut utiliser les valeurs stockées dans une objet littéral pour réaliser une concaténation 
+
+        // j'ai acheté une Peugeot en 2005 
+
+        console.log(`j'ai acheté une ${ voiture.marque } en ${ voiture.anneeAchat }`)
+
+        // 1 appel => AJAX => appeler un script
+
+        // 2 Apache (PHP => MySQL)
+        // 2 NOdeJS (Express) => MongoDB 
+
+        // nouvelle syntaxe function()
+
+        function hello(){
+            return "Bonjour les amis !";
+        }
+
+        console.log( `le logiciel vient de dire "${ hello() }"` );
+
+        // effectuer des calculs 
+
+        let x = 10  ; // pas besoin de définir le type des variables ()
+        let y = 20 ; // 
+        // écrire une rectangle de largeur 10 et de hauteur 20 a une aire de 200 
+
+        console.log(`un rectangle de largeur ${x} et de hauteur ${y} a une aire de ${ x * y }`) 
+        // je peux faire une addition / soustraction / multiplication / division / puissance / reste 
+    </script>
+</body>
+</html>
