@@ -1,0 +1,90 @@
+<!-- 
+    outil Emmet 
+    installé par défaut dans Visual Studio
+    outil permet d'écrire du html très vite 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Lorem, ipsum.</p>
+    <p>Ipsa, dolores.</p>
+    <p>Minus, veritatis.</p>
+    <!-- p*3>lorem2 -->
+    <!-- ul.intro>li*2>lorem2 -->
+    <ul class="intro">
+        <li>Lorem, ipsum.</li>
+        <li>Rerum, perspiciatis.</li>
+    </ul>
+
+    <!-- une balise html avec un id # -->
+    <!-- h1#presentation>lorem4 -->
+    <h1 id="presentation">Lorem ipsum dolor sit.</h1>
+
+    <!-- 
+        si j'ai besoin de créer des balises qui sont l'uns à côtés de l'autre
+        ( ) et le symbole +
+
+        article 
+            dans cette article 
+                h1 qui contient 3 motf fictifs
+                p qui contient 10 mots fictifs
+    -->
+    <!-- article>(h1>lorem3)+p>lorem10 -->
+
+    <article>
+        <h1>Lorem, ipsum dolor.</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, debitis?</p>
+    </article>
+
+    <!--  écrire le texte Hello via Emmet il faut l'entourer avec les symboles 
+      { }
+    -->
+
+    <!-- section>article*2>(h2>{Article})+p*3>lorem3 -->
+    <section>
+        <article>
+            <h2>Article</h2>
+            <p>Lorem, ipsum dolor.</p>
+            <p>Officia, obcaecati nihil?</p>
+            <p>Magni, accusamus. Deleniti!</p>
+        </article>
+        <article>
+            <h2>Article</h2>
+            <p>Rem, laudantium deleniti?</p>
+            <p>Dolore, et. Aliquam?</p>
+            <p>Earum, fuga illum.</p>
+        </article>
+    </section>
+
+    <!-- je veux commenter rapidement un texte Ctrl + / à côté de la touche espace
+    install le plugin Sublim text Keymap  
+        Visual Studio => notation => Emmet permet de créer des pages web rapidement 
+    -->
+    <!-- le dernier symbole à connaitre $ => permet de faire de numérotation -->
+    <!-- 
+        créer une liste => Action 1 / Action 2 ... Action 10 
+    -->
+    <!-- ul>li*10>{Action $} -->
+    <ul>
+        <li>Action 1</li>
+        <li>Action 2</li>
+        <li>Action 3</li>
+        <li>Action 4</li>
+        <li>Action 5</li>
+        <li>Action 6</li>
+        <li>Action 7</li>
+        <li>Action 8</li>
+        <li>Action 9</li>
+        <li>Action 10</li>
+    </ul>
+
+    <!-- ul>li*10>{Action} Sublim Text Key-->
+
+    
+</body>
+</html>
