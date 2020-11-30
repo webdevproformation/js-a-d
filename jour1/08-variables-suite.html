@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Types par défaut - primitif
+        // undefined
+        let a ;
+        // string
+        let b = "bonjour"
+        // number
+        let c = 123
+        // boolean 
+        let d = 12 > 3;
+        // type complexe 
+        // objet 
+        // en javascript tout est objet  
+        // dans les objets vous avez des sous familles 
+        // tableau 
+        let e = [1, 2, 3];
+
+        // objet littéraux 
+        let f = { 
+            prop1 : "Hello",
+            prop2 : 123,
+            prop3 : [ 1, 2 , 3] ,
+            prop4 : { element : 2 }
+        };
+        console.log(typeof(e)); // object 
+        console.log(typeof(f)); // object 
+
+        let voiture = {
+            marque : "VW",
+            km : 120000,
+            proprietaire : { 
+                nom : "Hugo",
+                age : 120
+             }
+        }
+        // si je veux afficher dans la console => le nom du propriété de la voiture
+        console.log(`le propriété s'appelle ${ voiture.proprietaire.nom }`);
+        // javascript => tout est public (concept privé ou protected n'existe pas)
+        let p = {
+            nom : "Monsieur",
+            prenom : "Alain"
+        }
+        let vehicule = {
+            marque : "Toyota",
+            proprietaire : p
+        }
+        console.log(` il s'appelle ${vehicule.proprietaire.prenom}` );
+
+        // JSON => Javascript Object Notation 
+        // Collection = un array qui contient des objets 
+        // tableau qui contient des véhicules 
+
+        let garage = [
+            {
+                marque : "Renault",
+                modele : "Espace"
+            },
+            {
+                marque : "Toyota",
+                modele : "Hyaris"
+            }
+        ];
+
+         console.log(garage[0].marque);
+         console.log(garage[1].modele);
+
+        // JSON => Javascript Object Notation 
+        // ressemble beaucoup à une Collection 
+        // EN + => ne pas oublier de mettre les propriétés de l'objet avec ""
+
+        let garage2 = [
+            { 
+                "marque" : "Peugeot",
+                "modele" : 206
+            },
+            {
+                "marque" : "WV"
+            }
+        ];
+        // AJAX
+    </script>
+</body>
+</html>
