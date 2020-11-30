@@ -1,0 +1,141 @@
+<!-- 07-variable.html  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // en javascript => vous pouvez créer des variables 
+        // !! pas besoin de lui dire quel est le type de la variable 
+        // javascript va le déterminer au moment où vous allez 
+        // faire une affectation 
+
+        // en javascript 5 types primitifs par défaut 
+
+        // undefined 
+        let a ; // créer une variable sans lui affecter une valeur 
+
+        console.log(typeof ( a ));
+
+        // string = chaine de caractère 
+        let b = "hello";
+        let c = 'hello';
+        let d = `hello` ; // back quote // backtick
+
+        console.log( typeof (b), typeof (c) , typeof (d));
+
+        // chiffre => number 
+        // entier => 2 // chiffre négatif -3 // chiffre réel 1.5 
+        // INfinity 2/0 
+
+        let e = 2;
+        let f = 1/0;
+        let g = -1.4 ;
+
+        console.log( typeof (e), typeof (f) , typeof (g));
+
+        //concaténation 
+        let h = 2 ; // number
+        let i = "2"; // string 
+
+        console.log( h + i ); // ??? "22"
+        //  transtypage  2 + "2"
+        //  transtyper   "2" + "2"
+        //                 "22"
+
+        console.log( 2 + 4 + "45" + 6 + 5);
+        //console.log( 6 + "45" + "6" + "5");
+        //console.log( "6" + "45" + "6" + "5");
+        //console.log( "64565");
+
+        // * / - 
+        // var const let
+        let j = 2 ;
+        let k = "4"; // "4" en 4
+
+        console.log( j - k ); // l'inverse
+        console.log( j * k ); // l'inverse
+        console.log( j / k ); // l'inverse
+
+        let l = "12p"; // string qui contient une lettre 
+        let m = 2 ;
+
+        console.log( l - m ) ; // NaN Not A Number
+        console.log( l * m ) ; // NaN Not A Number
+        console.log( l / m ) ; // NaN Not A Number
+
+        let n = "2";
+        let o = 7 ;
+
+        console.log( n + o); // "27"
+
+        // parseInt() => string qui contient un int => number 
+        console.log(parseInt(n) + o ); // => 9
+
+        //parseFloat() => string qui contient un nombre réel (nombre à virgule)
+
+        console.log(parseFloat("1.2") + 1.6); //2.8
+        
+        // enlever automatiquement les valeurs sous la virgule
+        console.log(parseInt("1.2") + 1.6); //2.6
+
+        // objet natif
+        console.log( Number (10));
+        console.log( Number ("10"));
+        console.log( Number ("10.12"));
+        console.log( Number ("10.12px")); 
+
+        console.log(typeof(NaN)); // number 
+
+        // boolean 
+        // true / false 
+
+        let p = 20 > 2 ; 
+        // affectation 
+        // pg = pd
+        //    =  vrai 
+        //        true
+ 
+        console.log(typeof(p) , p); // true
+
+        let q = 20 < 2 ; 
+        console.log(typeof(q) , q); // false 
+
+        let r = true ;
+
+        // bizarre mais possible 
+
+        let s = 20 > 2 + "3"; // 
+        //let s = 20 > "2" + "3"; // 
+        //let s = 20 > "23"; // 
+        //let s = "20" > "23"; // 
+        //boolean false
+        // true
+        console.log(s);
+
+        let t = (20 > 2) + 0; // 
+        //let t = true + 0; // 
+        //boolean 1 + 0
+        // 1
+        console.log(t);
+
+        // comparer "hello" > "Bonjour"
+        console.log("hello" > "Bonjour"); // true ????? 
+        // h => ASCII 104
+        // B => ASCII 66 => true 
+        // événements => Caractère ASCII 
+
+        console.log("h" == "B") // false 
+        // h => 104
+        // B => 66
+
+        //00000000
+        // pause déjeuner 
+        
+    </script>
+</body>
+</html>
