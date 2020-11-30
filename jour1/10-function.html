@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // les fonctions en javacript
+        // il existe plein de manière de déclarer des fonctions 
+
+        // classique 
+        // déclarer la fonction premierFonction
+        // Typescript => retour void 
+        // 1ère manière de créer une fonction 
+        // déclaration de fonction
+        function premierFonction() {
+
+        }
+
+        // appel de la fonction 
+        premierFonction();
+
+        // 2ème manière de créer une fonction 
+        // créer une variable qui contient une fonction sans nom 
+        // fonction anonyme 
+        // expression de fonction
+        let a = function (){ };
+        // je veux appeler les instructions dans les accolades 
+        a();
+        // nom de la variable qui contient la fonction anonyme 
+        // suivi de () 
+
+        // la deuxième manière ne va pas polluer le scope globale
+        // window 
+        // normalement => code 
+        // insctruction ; 
+        // MAIS en javascript si vous mettez un saut de ligne 
+        // javascript va de lui même ajouter ; 
+
+        // nouvelle manière (ES6 => depuis 2015) 
+        // arrow function // fat arrow 
+        let b = () => { } ;
+        b();
+
+        // première manière de créer des fonctions 
+
+        function c ( param1, param2 ){
+            // paramètres => variables locales qui ne sont disponibles que dans la fonction 
+            console.log(param1 + param2);
+        }
+        c( 2 , 4 ); // 6 
+
+        // possible de donner des valeurs par défaut aux paramètres 
+
+        function d ( param1 , param2 = 10){
+            console.log(param1 + param2);
+        }
+
+        d( 10 ) // 20 utilisation de la valeur par défaut pour le deuxième paramètre
+        d( 12 , 3 ); // 15 utilisation des deux valeurs pour les paramètres 
+                    // le deuxième paramètr est redéfini par la valeur 3 donné lors de l'appel de la fonction
+        d( ) // NaN  undefined + 10 => NaN
+
+        // Que javascript qui permet ça 
+        // créer une fonction avec des paramétres 
+        // appel la fonction sans paramètres => pas Erreur 
+
+        // return 
+
+        function e (p1, p2){
+            return p1 - p2 ;
+        }
+
+        // récupérer la valeur calculée dans la fonction 
+
+        let resultat = e (1, 2);
+        console.log(resultat) ; // -1
+
+        function f (p1, p2){
+            let r = p1 + p2 ;
+            // dans la fonction f => il n'y a pas le mot clé return 
+        }
+        // en js une fonction même si elle n'a pas de mot clé return , retourne quand même undefined 
+        let resultat2 = f( 1, 3); // 
+        console.log(resultat2 , "ici"); // undefined
+
+        // 2ème manière IDENTIQUE à la première manière 
+
+        let g = function( param1 , param2 ){
+            return param1 / param2 ;
+        }
+
+        let resultat3 = g( 10 , 2);
+        console.log( resultat3 ) // 5
+
+        let h = function( param1 , param2 = resultat3 ){
+            return param1 / param2 ;
+        }
+
+        console.log( h(100) ); // 20 éxécute une fonction comme paramètre d'une autre fonction
+
+        // la dernière manière ARROW function 
+
+        let i = ( param1, param2 ) => { 
+            console.log(param1 * param2)
+        };
+        i( 3 , 2 ); // 6
+
+        // attention les Arrow functions => 1 seul paramètre vous pouvez ne pas mettre 
+        // les ( )
+        let j = param1 => {
+            console.log(param1 * 4);
+        }
+        
+        // les parenthèses sont facultatives si vous avez 1 seul paramètre
+        j(10); // 40
+
+        let k = (param1 = 2) => { // création de la fonction
+            console.log(param1 * 4);
+        }
+        k(); // 8 appel de la fonction
+
+        // si vous avez 1 seul instruction dans les arrow function => vous pouvez vous passez des accolades aussi 
+        // les accolades sont facultatives (vous pouvez en mettre si nécessaire )
+
+        let l = param1 => console.log(param1 / 2);
+
+        l(20) ; // 10
+
+        // 1 seule instruction l'arrow function fait un return automatique 
+
+        let m = param1 => param1 * 30 ;
+
+        // let m = (param1) => { return param1 * 30  }
+        
+        console.log( m( 20 )) // 600
+    </script>
+</body>
+</html>
