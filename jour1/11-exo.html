@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let aireCercle = rayon => {
+            if( typeof( rayon ) != "number" ){
+                throw new Error("rayon doit être une number" );
+            } 
+            let resultat = 3.14 * rayon * rayon ;
+            // let resultat = 3.14 * rayon ** 2 ; // ** => puissance
+            // let resultat = Math.PI * rayon ** 2 ; // variable de javascript => Math.PI 
+            console.log( `l'aire d'un cercle de rayon ${rayon} a une aire de ${ resultat.toFixed(2)} `) ;
+            //console.log( `l'aire d'un cercle de rayon ${rayon} a une aire de ${ 3.14 * rayon * rayon } `) ;
+        };
+
+        // utiliser la fonction 
+        try{
+            aireCercle( "44.5" ) ; // attention les chiffres à virgule => . 
+        }catch(error){
+            console.log( error.message) ;
+        }
+        aireCercle( 70.43 ) ; 
+        // TypeScript => transpiler ES3
+        // Méteor // Framework // créer des logiciels 
+        // installé sur les ordinateurs
+        // Typescript // Angular 
+
+        console.dir("hello");
+        console.error("hello");
+        console.trace("hello");
+        console.warn("hello");
+    </script>
+</body>
+</html>
