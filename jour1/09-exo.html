@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+         ce fichier contient une collection 
+        nom de la variable formation 
+        des objets 
+            { 
+                nom : "js",
+                duree : 3 ,
+                unite : "jours"
+            }
+            { 
+                nom : "js avancé",
+                duree : 5 ,
+                unite : "jours"
+            }
+
+        Veuillez afficher dans la console les phrases suivantes :
+
+        je suis une formation en js d'une durée de 3 jours
+        en tout j'ai plus de 8 jours de formation en js et avancé
+        
+        */
+
+        let formation = [
+            {
+                nom : "js",
+                duree : 3 ,
+                unite : "jours" , // pour la dernière valeur de l'objet vous pouvez mettre une , facultative collection OK
+                // JSON la , est interdite 
+            },
+            { 
+                nom : "js avancé",
+                duree : 5 ,
+                unite : "jours"
+            }
+         ];
+         // je suis une formation en js d'une durée de 3 jours
+
+console.log( `je suis une formation en ${formation[0].nom } d'une durée de ${formation[0].duree } ${formation[0].unite}` ); 
+        //  en tout j'ai plus de 8 jours de formation en js et avancé
+         
+console.log(`en tout j'ai plus de ${ formation[0].duree + formation[1].duree } ${formation[0].unite} en ${formation[0].nom} et ${formation[1].nom}`);
+
+            // Python => key : value
+            // objet litéraux == dictionnaire Python
+    </script>
+</body>
+</html>
