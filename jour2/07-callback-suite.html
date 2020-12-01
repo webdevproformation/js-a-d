@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // callback 
+        // défini une fonction 
+        // passe un param => contenir une fonction 
+
+        function a ( callback ){
+            let nombre = 10 ;
+            let nombre2 = 20 ;
+            console.log( nombre * nombre2);
+            callback( 20 );
+        }
+
+        // au moment de l'appel de la fonction a => définir les instructions 
+        a( ( i ) => { 
+            console.log("fin" + i);
+        } );
+
+         // rappel 
+         let callback = ( i ) => { console.log("fin" + i); }
+         callback( 20 );
+
+         // document.querySelector("h1").addEventListener("click", function(){})
+
+         // Asynchrone en JS => section9 (excellente vidéo)
+         // permet d'ajouter du code dans une fonction
+
+        // faire de la programmation asynchrone 
+
+
+        // synchrone 
+        // instruction => attend qu'elle soit exécutée à 100%
+        // instruction => attend qu'elle soit exécutée à 100%
+        // instruction => attend qu'elle soit exécutée à 100%
+        // instruction => attend qu'elle soit exécutée à 100%
+
+        // asynchrone :
+        // instruction => prendre 2 secondes pour être exécutée à 100%
+        // instruction => prend fraction de secondes pour exéctuée
+        // instruction => prend fraction de secondes pour exéctuée
+        // instruction => prend fraction de secondes pour exéctuée
+
+        // javascript il ne va pas attendre que la 1ère instruction soit finie à 100%, il exécute les autres, et il donne le résultat 
+
+        // ajax => télécharger des données => server demande reçoit 
+        // génération de mot de passe => beaucoup de calcul à effectuer 
+        // setTimeout() <= fonction intéressant pour mimer un téléchargement de gros fichier 
+
+        let resultat ;
+        console.log("debut");
+
+        setTimeout( () => {
+            resultat = 20 + 10 ;
+        } , 3000 );
+
+        console.log(resultat);
+        // je veux excuter console.log(resultat); uniquement quand j'ai récupérer le résultat 
+
+        console.log("etape1");
+
+        function attenteResultat( callback ){
+            setTimeout( () => {
+                resultat = 20 + 10 ;
+                console.log("c'est bon j'ai récupéré les données stockées sur un serveur ")
+                callback( resultat );
+            } , 3000 );
+        }
+
+        attenteResultat ( function( resultat){
+            console.log("le résultat est égal à " + resultat) ;
+        });
+    </script>
+</body>
+</html>
