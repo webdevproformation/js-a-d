@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--  
+        en 2020 => module (ES6) 
+        javascript géré par organisme ECMAScript (association => société Google / Facebook / Microsoft ...)
+        proposition pour améliorer le langage => qu'est ce que l'on peut 
+        ajouter pour améliorer la langage
+        tous les ans => liste d'amélioration ES6 / ES5 / ES3 / ES2000 ....
+        nouvelle version de javascript Version 6 
+
+        OBLIGATOIREMENT vous devez mettre l'attribut type="module"
+    -->
+    <script type="module">
+        // créer un fichier 02-script.js
+        import { a , b , e } from "./02-script.js";
+        import { c } from "./js/02-script-autre.js";
+        import { d } from "../script.js";
+        // pas d'attribut src sur la balise script
+        // vous devez respectez le nom de la fonction
+
+        console.log( e );
+        a();
+        c();
+        b();
+        d();
+        // notez bien que la fonction b n'existe pas ici !!!! 
+        // "./" dans le même dossier
+        // "./js " dans le dossier js qui est situé dans le même dossier 
+        // "../" dans le dossier parent
+        // "../../" dans le dossier grand père
+
+        // vous pouvez exporter plusieurs fonctions / variable d'une fichier 
+        // Il faut aussi le déclarer dans l'import 
+        // pour qu'il soit utilisable 
+    </script>
+</body>
+</html>
