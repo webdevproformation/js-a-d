@@ -18,7 +18,7 @@ export function generateArticle(param){
 let a = [ 1 , 2 , 3 ];
 // vu que c'est une tableau => javascript va ajouter à cette variable des méthodes
 // objet natifs
-a.map( )
+a.map( function(){} )
 
 // .map() => parcourir chacun des éléments  du tableau 
 // ajouter des valeurs en plus pour chaque item 
