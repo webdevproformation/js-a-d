@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+    créer un nouveau fichier 08-exo.html 
+
+    afficher instantanément le message dans la console
+    "requête effectuée"
+
+    afficher au bout de 2 secondes dans la console le message suivant
+    "serveur démarré et traite la demande"
+
+    afficher 3 seconde plus tard dans la console le message suivant
+    "donnée envoyée"
+-->
+
+    <script>
+        // montrer le comportement souhaité 
+        // plutôt utiliser des callback 
+        /* console.log("requête effectuée");
+
+        setTimeout( () => {
+            console.log("serveur démarré et traite la demande");
+        } , 2000)
+        
+        setTimeout( () => {
+            console.log("donnée envoyée");
+        } , 5000) */
+
+        /* console.log("requête effectuée");
+        setTimeout( () => {
+            console.log("serveur démarré et traite la demande");
+            setTimeout( () => {
+                console.log("donnée envoyée");
+            } , 3000)
+        } , 2000); */
+
+        // excellent !!! 
+
+        // entre les deux 
+        function serverDemarre(callback ){
+            setTimeout( () => {
+                console.log("serveur démarré et traite la demande");
+                callback();
+            } , 2000);
+        }
+        // la fonction est le plus à la fin 
+        function dataEnvoyee(){
+            setTimeout( () => {
+                    console.log("donnée envoyée");
+            } , 3000)
+        }
+        
+        console.log("requête effectuée") ;
+        // serverDemarre(dataEnvoyee);
+
+        // autre solution 
+        serverDemarre( function(){
+            setTimeout( () => {
+                    console.log("donnée envoyée");
+            } , 3000)
+        })
+
+
+        function serveur(callback1 , callback2){
+            console.log("requête effectuée") ;
+            setTimeout( function(){
+                callback1()
+                setTimeout( callback2() , 5000)
+            } , 2000);
+        }
+
+        serveur( 
+            () => {
+                console.log("serveur démarré et traite la demande")
+            }
+                , 
+            () => {
+                console.log("donnée envoyée 2")
+            });
+
+    </script>
+</body>
+</html>
