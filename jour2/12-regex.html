@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // chercher dans un string un pattern et pouvoir le récupérer 
+
+        let pattern = new RegExp( "a" , "gi" )
+        let pattern2 = /a/gi ; // expression régulière
+        // pas du texte 
+        // expression règulière
+        //   / motif / drapeau 
+        //              g => globale sur la chaine de caractère 
+        //              i => insensible à la casse
+
+        let t = "bonjour";
+
+        console.log(t.match(pattern2)); // est ce qu'il y a la lettre a dans la variable t 
+
+        let u = "J'ai fAim";
+        console.log(u.match(pattern2));
+
+        // vérifier que un numéro de téléphone à bien la forme suivante
+        // 00 00 00 00 00
+        // pour que le numéro de téléphone saisit par un utilisateur
+        // est valide => il faut avoir cette forme 
+
+        //let patternNumeroTelephone = /^[0-9][0-9] [0-9][0-9] [0-9][0-9] [0-9][0-9] [0-9][0-9]$/ ;
+        //let patternNumeroTelephone = /^[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}$/ ;
+        let patternNumeroTelephone = /^\d{2} \d{2} \d{2} \d{2} \d{2}$/ ;
+
+        let monTel = "01 01 01 99 01";
+
+        console.log(monTel.match(patternNumeroTelephone));
+        
+        // vérifier un email 
+        // lettre@lettre.net
+
+        let patternEmail = /^[a-z0-9\.\-]{1,}@[a-z]{1,}\.[a-z]{3}$/;
+
+        let monEmail = "malik1234@webdevpro.net";
+
+        console.log(monEmail.match(patternEmail));
+
+        // https://regex101.com/ 
+
+        // cas pratique ?? 
+
+        // créer le fichier 13-exo.html
+        // créer une expression régulière
+        // qui va vérifier si une adresse internet est conforme 
+
+        // http://texte/texte/fichier.js
+        // http://texte/texte/dossier
+        // http://texte/texte/dossier1234
+
+        // pour l'exemple les adresses suivantes 
+        // ne sont pas valides
+
+        // http://texte/texte/dossier!1234
+        // http://texte/texte/dossier\1234
+    </script>
+</body>
+</html>
