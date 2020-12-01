@@ -71,7 +71,7 @@
             console.log("requête effectuée") ;
             setTimeout( function(){
                 callback1()
-                setTimeout( callback2() , 5000)
+                setTimeout( callback2 , 5000)
             } , 2000);
         }
 
@@ -84,6 +84,10 @@
                 console.log("donnée envoyée 2")
             });
 
+            // setTimeout( function(){ ici } , duree  )
+
+            let a = function(){}
+            // setTimeout( a , duree  )
     </script>
 </body>
 </html>
