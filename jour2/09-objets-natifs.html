@@ -45,8 +45,42 @@
         let data = "10 1234 25" ;
 
         console.log(data.split(" "));
-        // .split() transformer une chaine de caractère en un tableau 
+        // .split() transformer une chaine de caractère en un array 
         // .split() dispose d'un paramètre  séparateur 
+
+       /*  let x ; 
+        console.log(typeof(x))
+        console.log(x.length)
+        x.toLocaleLowerCase(); */
+
+        let arbre = "Chêne";
+
+        // cas pratique 
+        // cHENE
+
+        let nouvelArbre = arbre[0].toLocaleLowerCase() + arbre.slice(1,5).toLocaleUpperCase();
+        // .slice() => couper
+        // .slice(indexDepart , indexDeFinNonInclu)
+
+        console.log(nouvelArbre);
+
+        let autreArbre = arbre[0].toLocaleLowerCase() + arbre.slice( -4 ).toLocaleUpperCase();
+
+        console.log(autreArbre);
+
+        let chat = "chaton";
+
+        // .substr()
+
+        let phrase = "je dis bonjour à tout le monde";
+
+        console.log(phrase.substring(7, 7+7 ));
+        // alternative à slice( )
+
+        /* console.log(chat.reverse()) */
+
+        // cas pratique => prendre la phrase suivante 
+        // faire le reverse 
 
         // Pause café = rdv 15h47 
 
