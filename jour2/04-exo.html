@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="module">
+        import { data } from "./04-data.js";
+        import { generateArticle } from "./04-traitement.js";
+        console.log(data);
+        // utilisation 
+        //data.forEach( element => generateArticle( element ) );
+
+        generateArticle( data[0] );
+        generateArticle( data[1] );
+        generateArticle( data[2] );
+        generateArticle( data[3] );
+        generateArticle( data[4] );
+        generateArticle( data[5] );
+    </script>
+</body>
+</html>
