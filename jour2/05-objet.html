@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="module">
+        // sorry => finir les import  / export  
+
+        import  jQuery , { largeur } from "./05-script.js"
+        import { largeur as l } from "./05-script-2.js";
+        
+        jQuery();
+        console.log(largeur);
+        console.log(l);
+        // pas besoin d'utiliser des { }
+        // lors de l'import 
+        // le 05-script.js contient plein de fonctions locales 
+        // et tu ne veux exporter 1 seule fonction 
+        // export 1 seule chose 
+        // si vous utilisez le mot clé as au moment de l'import => renommer une variable 
+        // conflit entre deux fichiers 
+        // voila la nouvelle norme => module en js 
+        // react / vue.js // svelte .... 
+    </script>
+</body>
+</html>
+
+<!-- 
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export
+-->

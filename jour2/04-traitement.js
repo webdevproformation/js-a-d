@@ -35,3 +35,5 @@ a.map( function(){} )
 //let b = [ <li>1</li> , <li>2</li> , <li>3</li> ];
 
 // let b = a.map(function(item){ return "<li>"+item+"</li>" } );
+
+// 05-objet.html
