@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // on a vu ensemble qu'il existe plusieurs types primitifs :
+        let rien ; // undefined
+        let a = "hello"; // string
+        let chiffre = 1 ; // number
+        let test = 20 > 2 ; // boolean 
+
+        // quelques types complexes 
+        let tableau = []; // objet de type tableau 
+        let objet = { } // objet literal
+        let action = function(){ } // objet de type fonction
+
+        // un peu comme le transtypage 
+        // lorsque vous créer une variable 
+        // en + de stocker la valeur dans la variable en +
+        // javascript va ajouter à la variable des propriétés et des méthodes
+
+        let auteur = "Victor Hugo"; 
+        // dans la variable auteur stocker la valeur "Victor Hugo"
+        // MAIS en + Javascript va ajouter des méthodes et des propriétés
+        // à la variable 
+        auteur.toLocaleUpperCase() // type string // permet de mettre le contenu de la variable en MAJUSCULE
+        console.log(auteur.toLocaleUpperCase());
+
+        console.log(auteur.toLocaleLowerCase()); // minuscule 
+
+        console.log(auteur.length); // nombre de caractère dans auteur
+        // nombre de caractère espace inclus
+
+        let b = "      a b        ";
+
+        console.log(b.length);
+
+        // supprimer les espaces avant et après
+        console.log(b.trim().length);
+
+        let data = "10 1234 25" ;
+
+        console.log(data.split(" "));
+        // .split() transformer une chaine de caractère en un tableau 
+        // .split() dispose d'un paramètre  séparateur 
+
+        // Pause café = rdv 15h47 
+
+        // POO (fin de journée)
+
+        // Ajax / DOM 
+        // NodeJS 
+
+
+
+        // liste complète => MDN => string object MDN
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+</script>
+</body>
+</html>
