@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // callback ?? 
+        // encore une autre manière d'utiliser des fonctions en javascript 
+        // 3 manières de créer des fonctions 
+        function a(){}
+        let b = function(){};
+        let c = () => { }
+
+        // IIFE : fonction anonyme auto exécutante 
+        (function(){})()
+
+        // en javascript aucun problème pour appeler une fonction dans une autre appelé
+
+        function calcul(){
+            return 2 + 3 ;
+        }
+
+        function d( param ){
+            console.log(param)
+        }
+
+        d( calcul() ); //  d'abord => effectuer  calcul() => 5
+                       // effectuer d( ) => afficher dans la console 5
+
+        // callback 
+        // 1 définit ma fonction 
+        // 1 param => et je l'exécute dans la fonction 
+        function genererPage( callback ){
+            console.log("instruction 1");
+            callback(); // attention je prend mon paramètre et je le suis de ()
+            console.log("instruction 2");
+        }
+        // définir une fonction comme paramètre au moment de son appel
+        // => callback 
+        // 2 appel ma fonction genererPage MAIS 
+        // l'argument => déclaration de fonction 
+        genererPage( function(){ 
+            console.log("instruction dans genererPage");
+        }) ;
+        // document.getElementById("h1").addEventListener("click" , function(){ })
+
+        // callback ajouter du code dans une autre fonction 
+        // closure (un peu plus tard)
+        // ES6 en 2015 - class extends super 
+        //   ::parent()
+    
+        // programmation asynchrone 
+        // programmation synchrone ??
+
+        // javascript va attendre que l'instruction soit finie pour passer à la ligne suivante 
+
+        // programmation synchrone 
+        console.log("etape 1");
+        let g = 2 + 4 ;
+        console.log(g);
+
+        // setTimout( callback , dureeMillisecondes )
+        // fonction qui permet exécuter des choses  plus tard 
+        // programmation asynchrone 
+
+        console.log("nouvelle étape");
+        setTimeout ( () => {
+            console.log("etape intermédiaire")
+        } , 2000 ); 
+        // pendant les 2 secondes => 
+        // javascript ne va pas STOPER le code 
+        // l'instruction suivante est exécuter 
+        console.log("dernière etape");
+
+        // comment faire pour que "dernière étape"
+        // javascript Attende que ça s'exécuter pour faire cette instruction ... => callback 
+
+
+        console.log("etape 1 callback");
+        
+        function attendre( callback){
+            setTimeout( () => {
+                callback();
+                console.log("étape 3 callback");
+            } , 3000)
+        }
+        attendre( () => {
+            console.log("etape 2 callback")
+        })
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
