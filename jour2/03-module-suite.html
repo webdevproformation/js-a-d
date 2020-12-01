@@ -1,0 +1,34 @@
+<!-- 03-module-suite.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="module">
+        import { objet , a , b , c , d } from "./03-script.js";
+
+        objet.b()
+        b();
+
+        //si on a besoin de récupérer TOUTES les fonctions / variables exportées d'un coup
+
+        // autre syntaxe possible 
+
+        import * as script from "./03-script.js" ;
+
+        // toutes les fonctions exportées sont désormais stockées dans la variable script
+        // la variable script qui est un objet
+        // pour utiliser la méthode d 
+
+        script.d();
+
+        script.objet.a();
+
+        script.a(); 
+
+    </script>
+</body>
+</html>
