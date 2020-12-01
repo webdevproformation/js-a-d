@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // créer le fichier 13-exo.html
+        // créer une expression régulière
+        // qui va vérifier si une adresse internet est conforme 
+
+        // http://texte/texte/fichier.js
+        // http://texte/texte/dossier
+        // http://texte/texte/dossier1234
+
+        // pour l'exemple les adresses suivantes 
+        // ne sont pas valides
+
+        // http://texte/texte/dossier!1234
+        // http://texte/texte/dossier\1234
+
+        let patternUrl = /^http:\/\/[a-z0-9\.\/]{1,}$/;
+
+        let patternUrlv2 = /^http:[\/]{2}[a-z0-9\.\/]{1,}$/;
+        
+
+    </script>
+</body>
+</html>
