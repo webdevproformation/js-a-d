@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let prix = 10 ;
+        let prix2 = 10.8888888888888888888 ;
+        let prix3 = 10.8858888888888888888 ;
+        let prix4 = 10.8838888888888888888 ;
+
+        // gérér les virgules
+
+        console.log(prix.toFixed(2)) // "10.00"
+        console.log(prix2.toFixed(2)) // "10.89" arrondi en +
+        console.log(prix3.toFixed(2)) // "10.89" arrondi en +
+        console.log(prix4.toFixed(2)) // "10.88" arrondi en -
+
+        console.log(prix4.toFixed(0)) // 11 en +
+
+        // des fois vous voulez écrire un chiffre et l'arrondir ()
+        let p = 10;
+        console.log(p.toFixed(2))
+
+        console.log(( 10 ).toFixed(3));
+
+    </script>
+</body>
+</html>
+<!-- 11-math.html -->
