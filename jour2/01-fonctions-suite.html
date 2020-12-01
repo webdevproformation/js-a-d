@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 3 manière de les déclarer 
+        function a () { } ;
+        let b = function(){ } ;
+        let c = () => { } ;
+
+
+        // 4ème encore fonction anonyme auto exécutante 
+        // 1 ()()
+
+        // 2 (function(){})()
+
+        // 3 sauter une ligne dans les accolades 
+        
+        (function(){
+            console.log("je suis bien executé !");
+        })();
+
+        // déclarer et exécuter une fonction SIMULTANEMENT
+        // IIFE = Immediately Invoked Function Expression
+        // => Module à l'ancienne Import / Export 
+
+        // syntaxe => Manière de créer des modules ES6 
+
+        // syntaxe utilisé encore en 2020 
+        // => Google Analytics ?? outil de google 
+        // installer ce script sur votre site => MOuchard 
+        // script donner une idée de l'activité de votre site : traffic / temps passé  ...
+        // Compte Gmail // Site sur internet (hébergement sur internet)
+
+        // https://developers.google.com/analytics/devguides/collection/analyticsjs/
+
+
+
+    </script>
+
+    <script>
+    (function(i,s,o,g,r,a,m){
+        i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })
+    (window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    
+    ga('create', 'UA-XXXXX-Y', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    <script>
+        // avant 2015 => Bonne pratique en js 
+        (function(){
+
+            // écrit TOUT son code js 
+            // en javascript tout va être associé à l'objet global window 
+            
+        })();
+
+        console.log( window )
+        // lorsque je crée une fonction (méthode classique )
+        // les fonctions a et d => automatiquement associée à l'objet objet global
+        // window 
+        // polluer le scope global
+        // quand vous déclarer une fonction (méthode classique)
+        function d(){
+
+        }
+        // javascript va automatiquement l'associer en fait l' objet global window
+
+        // window = { 
+        //    d : function(){}
+        // }
+
+        // la syntaxe créer une fonction 
+
+        // la méthode 2 et 3 pour créer des fonctions 
+        let e = function(){ } ; // ne vient pas s'ajouter un méthode dans l'objet window (encombrer)
+
+        // code javascript sur plusieurs fichiers js 
+        // => je viens de redéclarer le nom de ma fonction
+        // par une variable 
+        // aucun message d'erreur 
+        var d = 20 ;
+        // let d = 20 ; // let => là vous avez un message d'erreur 
+        // redeclaration of function d
+
+        // le seul moment où je vais avoir une erreur => au moment d'exécuter ma fonction
+        //d(); //  d is not a function
+
+        // impliquer de connaitre le nom de toutes les variables / fonctions dans tous les script 
+        // écrit notre script => ne pas les utiliser 
+
+        // toujours utiliser let     
+        // Au minimum un message d'erreur 
+
+
+        // traitement 1 
+        (function(){
+            let a = 2 ;
+            console.log(a)
+        })();
+
+        // traitement 2 
+        (function(){
+            let a = 6 ;
+            console.log(a * 4)
+        })()
+        
+        // si j'ai besoin d'utiliser des valeurs qui sont 
+        // stockées à l'extérieur de mon IIFE
+
+        // variable globale 
+        let pageWeb = {
+            nom : "page d'accueil",
+            poids : 120,
+            unite : "ko"
+        };
+
+        (function( p ){ // p === pageWeb , p est un alias (renommer) de la variable pageWeb
+            let a = 30 ;
+            console.log(p);
+            console.log(`la page ${p.nom} pèse ${p.poids * a}`);
+        })( pageWeb );
+
+        // problème de conception de javascript 
+        // js pas detout penser 1000 fichiers js => React / Angular 
+        // 2020 
+
+    </script>
+    <script src="01-script1.js"></script>
+    <script src="01-script2.js"></script>
+    <script>
+        console.log(calcul); // 30
+        // pour contourner le problème d'encombrement de l'objet window
+        // window => fenête du navigateur (et sa RAM dédiée pour qu'elle fonctionne )
+        // IIFE 
+        // en js TOUT est public (protected / private)
+        // grace à l'IIFE => Emballer notre code js pour éviter cet effet de bord 
+        // en 2020 !! 
+        // 02-module.html
+    </script>
+</body>
+</html>
