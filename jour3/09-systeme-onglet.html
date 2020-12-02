@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        système d'onglet 
+        Emmet 
+        .onglet>(button*3>{onglet $})+p*3>lorem10
+    -->
+    <div class="onglet">
+        <button data-index="0">onglet 1</button>
+        <button data-index="1">onglet 2</button>
+        <button data-index="2">onglet 3</button>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, quia.</p>
+        <p>Quam, ducimus. Laboriosam provident asperiores expedita, ex possimus sed ratione?</p>
+        <p>Ipsam quia nisi aspernatur, doloremque voluptate maiores dolores ab optio?</p>
+    </div>
+    <script>
+        // sélectionner tous les p de la page est je veux les masquer
+        // array 
+
+        document.querySelectorAll(".onglet p").forEach( function( item ){ 
+                item.style["display"] = "none";
+        } );
+
+        // affiche le premier p dans la balise onglet 
+        document.querySelectorAll(".onglet p")[0].style["display"] = "block";
+
+        // ajouter un écouteur d'événement sur chaque bouton 
+
+        document.querySelectorAll(".onglet button").forEach( function(item){
+            item.addEventListener( "click", function(){ 
+                document.querySelectorAll(".onglet p").forEach( function( item ){ 
+                    item.style["display"] = "none";
+                } );
+                let index = this.dataset.index;
+                // .dataset.index permet de récupérer la valeur stockée dans l'attribut 
+                // data-index="0" qui est stocké dans la balise button cliquée 
+                document.querySelectorAll(".onglet p")[index].style["display"] = "block";
+            } )
+        } )
+    </script>
+    <h1 data-couleur="red" data-font-size="12" data-contenu="toto"></h1>
+    <script>
+        let objet = {
+            couleur : "red",
+            fontSize : 12 ,
+            contenu : "toto"
+        } 
+        let c = document.querySelector("h1").dataset.couleur;
+        let fz = document.querySelector("h1").dataset.fontSize;
+        let contenu = document.querySelector("h1").dataset.contenu;
+
+        document.querySelector("h1").style["color"] = c; // objet.couleur
+        document.querySelector("h1").style["font-size"] = fz; // objet.fontSize
+        document.querySelector("h1").innerHTML = contenu; // objet.contenu
+        // mdn html5 attribut data
+    </script>
+    <script>
+        function a(){
+            console.log(this); 
+        } // .bind()
+
+        function calcul(  a , b , c , d){
+            console.log( this.total + a + b + c + d )
+        } // call() ou apply()
+
+        let resultat = {
+            total : 30 
+        };
+
+        calcul.call(resultat , 2 , 4 , 1, 2 );
+        // exécuter la fonction 
+        // call(valeurDeThis , argument1 , Argument2 ) 
+
+        calcul.apply(resultat , [ 3 , 4 , 1, 2 ]);
+        // permet de définir la valeur de this => resultat
+        // le deuxième paramètre => tableau [ param ,  ]
+        // 2 paramètres maximum
+        // ...param 
+        // fonction avec paramètres infinis ...params
+
+        function addition ( ...param ){ // spread operator
+            let r =0 ; 
+            param.forEach(function(item){
+                r += item;
+            });
+            console.log(r);
+        }
+
+        addition( 1,2,3 ,4, 6);
+    </script>
+
+</body>
+</html>
