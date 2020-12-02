@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+             Créer le fichier 06-exo.html 
+            ce fichier contient le tableau suivant :
+
+            let etudiants = ["alain" , "béatrice" , "charles"];
+
+            à partir du tableau précédent, réaliser le tableau suivant :
+
+            let etudiantsModifie = ["<p>Alain</p>" , "<p>Béatrice</p>" , "<p>Charles</p>"];
+        */
+
+        let etudiants = ["alain" , "béatrice" , "charles"];
+
+        // parcourir chaque item et les enrichir => .map()
+        let etudiantsModifie = etudiants.map( function( item ){ 
+            return `<p>${item[0].toLocaleUpperCase()}${item.slice(1, item.length )}</p>`;
+         } );
+         console.log(etudiantsModifie);
+         // .slice( indexDepart , indiceDeLaderniereLettre + 1 )=> string => 
+         "charles"[0] // c
+         "charles"[1] // h
+
+         // "charles".length //  7 
+
+    </script>
+</body>
+</html>
