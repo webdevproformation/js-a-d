@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // attention ne pas écrire une date comme ça en js
+        let date = "01/01/2020"; // => chaine de caractère pas une date 
+
+        // pour créer une date utilise l'objet natif Date
+
+        let aujourdhui = new Date(); // maintenant 
+        console.log(aujourdhui); 
+
+        // 15 Décembre 2020
+        // attention les mois commencent à 0 
+        // janvier 0
+        // décembre 11
+        let rdv = new Date(2020 , 11, 15);
+        //               AAAA, MOIS à partir de 0 , JOUR
+        console.log(rdv);
+
+        // maintenant que vous avez créer votre date 
+
+        let rdvFormatFr = rdv.getDate() + "/" + (rdv.getMonth() + 1)  + "/" + rdv.getFullYear()
+        //                     JJ          /           MM          /        AAAA 
+        // attention ne pas utiliser la méthode => getYear() elle bugge
+
+        console.log(rdvFormatFr);
+
+        console.log(aujourdhui.getMonth()); // 11
+        console.log(aujourdhui.getUTCFullYear()); // 2020
+
+        // quelle est la différence entre les méthodes  getFullYear() et getUTCFullYear() ??
+        // getFullYear() => ordinateur (heure dans l'ordinateur)
+        // getUTCFullYear() => 
+        new Date('December 31, 1975, 23:15:30 GMT+11:00')
+        // MDN : https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Date/getUTCFullYear
+
+        console.log(aujourdhui.getYear()); // Bug 
+        // Pause 15 min - 10h48 // excellent café !
+
+        // Hello hello !!! 
+        // j'espère que le café a été excellent ! 
+
+        // aujourdhui 
+        let today = new Date() ;
+
+        // quelle est la date dans 
+    </script>
+</body>
+</html>
