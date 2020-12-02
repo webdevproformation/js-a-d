@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // les tableaux 
+        // deux manières de créer des tableaux
+        // à l'ancienne
+        let a = new Array(1, 2, 3);
+        // actuelle
+        let b = [1, 2, 3];
+        // le résultat est identique , on utilise surtout la méthode actuelle 
+
+        // pleins de méthodes disponibles pour manipuler les tableaux
+
+        // .push() => ajouter un nouvel élément à la fin du tableau 
+
+        b.push(4)
+        console.log(b);
+
+        // possibilité d'ajouter plusieurs éléments simultanément
+        // et type différent
+        b.push( "bonjour" , [1, 2]);
+        console.log(b);
+
+        // .join() prendre le tableau => string
+        console.log(b.join())
+        // par défaut le séparateur entre les éléments du tableau , 
+        // possibilité de la changer par une symbole
+        console.log(b.join("/"));
+
+        // même effet que .join() .toString()
+        console.log(b.toString());
+
+        console.log(b.toString("/"));
+        // string => tableau => string.split("/")
+
+        // .push() // ajouter à la fin
+        // .pop() // supprimer à la fin
+        // .unshift() // ajouter au debut
+        // .shift() // supprimer au début
+        // .splice() // fait tout ajouter / supprimer où on veut dans le tableau
+
+        let courses = ["pomme", "poire", "abricot"];
+
+        // supprimer le dernier élement
+        courses.pop();
+        console.log(courses);
+
+        // ajouter un élement au début 
+        courses.unshift("banane");
+        console.log(courses);
+
+        // je veux ajouter kiwi entre banane et pomme 
+        courses.splice( 1 , 0 , "kiwi" )
+        // argument = où => index 
+        // chiffre 0 ... 1 2 ... infini le nombre d'élement à supprimer dans le tableau 
+        // la valeur à ajouter 
+
+        console.log(courses);
+
+        //courses.splice(2 , 1)// supprimer pomme
+        //courses.splice(2 , 2)// supprimer pomme et poire
+        courses.splice(2 , 2 , "citron")// supprimer pomme et poire + ajouter à l'index 2 l'élément citron 
+        console.log(courses);
+
+
+        // rechercher dans des tableaux 
+
+        // .contains() (DOM)
+        // .includes()
+        // .find()
+        // .indexOf()
+
+        // Est ce que dans le tableau courses ??
+        // il contient kiwi ??? 
+
+        console.log(courses.includes("kiwi"));
+        // true si le mot est présent 
+        console.log(courses.includes("kiWi".toLocaleLowerCase()));
+        // attention includes() est sensible à la casse
+
+        // indexOf() => retourner l'index de l'élément recherché dans le tableau 
+        console.log(courses.indexOf("kiwi")); // 1
+        console.log(courses.indexOf("kiWi")); // -1 
+        // quand l'élement n'est pas dans le tableau  et non false 
+
+        // find() prend comme argument une fonction anonyme
+
+        let resultat = courses.find(function(item){
+            return item === "kiWi" || item === "citron" ;
+        })
+        console.log(resultat); // soit la valeur recherchée 
+        // undefined si non trouvé
+
+        courses.find(function(){});
+
+        // filter()
+        // récupérer le tableau sauf un élement "banane"
+
+        let resultat2 = courses.filter(function( item){ 
+            return item != "banane";
+        });
+
+        console.log(resultat2);
+
+        // 5 manières possibles pour parcourir un tableau 
+
+        for(let i = 0 ; i < courses.length ; i++){}
+
+        let i = 0;
+        while( i < courses.length){
+            i++;
+        }
+
+        // ES6 
+        for(let item of courses){}
+        for(let item in courses){}
+
+        // méthode de l'objet array
+        courses.forEach(function(item){
+            console.log(item);
+        });
+
+        for(let item of courses){ 
+            console.log(item );
+        } // tableau 
+
+        for(let index in courses){
+            console.log( courses[index] );
+        }
+        // objet litéral
+        let objet = {
+            nom : "voiture",
+            marque : "Peugeot"
+        }
+
+        for(let index in objet){
+            console.log(index , objet[index])
+        }
+        // for in => parcourir tableau ET des objets littéraux 
+
+        //objet il existe deux manières de récupérer une valeur
+        // la manière avec le .
+        console.log(objet.marque)
+
+        // manière avec les crochets (comme un tableau)
+        console.log(objet["marque"])
+
+        // map()
+        // créer une tableau à partir d'une autre tableau
+        // nouvelle version du tableau initial
+
+        let chiffres = [1,2,3];
+
+        // créer un nouveau tableau auquel chaque élement est augmenté de + 5 
+
+        let nouveauChiffres = chiffres.map(function(item){ 
+            return item + 5;
+        });
+
+        console.log(nouveauChiffres);
+
+        let categories = ["js", "jquery", "react"];
+
+        // ajouter au début  de chaque élement <li> 
+        // ajouter à la fin de chaque élement </li> 
+
+        let categorieHtml = categories.map(function(item){
+            return `<li>${item}</li>`
+        });
+
+        console.log(categorieHtml.join(""));
+        document.body.innerHTML = categorieHtml.join("");
+
+    </script>
+    <h1 id="toto"></h1>
+    <script>
+        // hack 
+        toto.innerText = "coucou"
+    </script>
+
+</body>
+</html>
+
+<!-- 
+    créer ta page  html 
+    fichier dépendre d'elle
+    .css
+    .js 
+    script src=""
+    script type="module"
+        import { fonct } from "fichier.js"
+
+    // dans fichier => dédiée aux données 
+    // des fichiers => librairies (stocker tes fonctions)
+    // dans le fichier => traitement donnée + fonction
+
+    
+-->
