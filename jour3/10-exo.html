@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let voiture = {
+            marque : "peugeot" ,
+            modele : 206
+        };
+        let voiture2 = {
+            marque : "Citroen" ,
+            modele : "C4"
+        }
+
+        let a = function(){
+            console.log( `je conduis une voiture ${this.marque} ${this.modele}` )
+        }
+
+        function description(){
+            return a ;
+        }
+        console.log(description);
+
+        let descriptionV1 = description().bind(voiture)
+        descriptionV1();
+        console.log("solution1 bis")
+        description.bind(voiture)();
+        console.log("solution2")
+        description.call(voiture);
+        console.log("solution3")
+        description.apply(voiture);
+
+        console.log("--------------------------")
+
+        description.bind(voiture2)();
+        console.log("solution2")
+        description.call(voiture2);
+        console.log("solution3");
+        description.apply(voiture2);
+
+        // description.bind(voiture2).caller
+        // ??? existe mais je ne l'ai jamais utilisé 
+
+
+        function maFonction() {
+            if (maFonction.caller == null) {
+                console.log( 'Fonction appelée au plus haut niveau !' );
+            } else {
+                console.log( 'Fonction appelée par ' + maFonction.caller);
+            }
+        }
+        maFonction();
+
+        ["a","b"].forEach( maFonction )
+    </script>
+
+    <h1 onclick="maFonction()">titi</h1>
+    <!-- 
+        https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Function/caller
+        POO => javascript 
+    -->
+</body>
+</html>
