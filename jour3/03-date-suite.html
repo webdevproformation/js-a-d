@@ -49,7 +49,37 @@
         // aujourdhui 
         let today = new Date() ;
 
-        // quelle est la date dans 
+        // quelle est la date dans 7 jours ?? 
+
+        // augmenter today de 7 jours 
+
+        today.setDate( today.getDate() + 7 );
+        console.log(today) // 9 décembre 
+
+        // le 01/01/2020
+        let nouvelAnnee = new Date(2020,0,1 );
+
+        // augmenter la date de 3 mois 
+
+        nouvelAnnee.setMonth( nouvelAnnee.getMonth() + 3 );
+
+        console.log(nouvelAnnee) ; // 1er Avril
+
+        // soustraction entre deux dates 
+        // le nombre de jours entre deux dates
+
+        let date1 = new Date(2020 , 0, 1); // 1er janvier 2020
+        let date2 = new Date(2020 , 1, 1); // 1er février 2020
+
+        let nombreJourEntreDeuxDates = date2 - date1;
+        console.log(nombreJourEntreDeuxDates); // 2678400000 // durée en millisecondes entre les deux dates 
+        // 1 heure = 60min x 60secondes
+        // 1 jour = 60min x 60secondes x 24
+        let nbMilliSecondesDans1Jour = 60 * 60 * 24 * 1000;
+
+        let nb = nombreJourEntreDeuxDates / nbMilliSecondesDans1Jour;
+        console.log(nb);
+        
     </script>
 </body>
 </html>
