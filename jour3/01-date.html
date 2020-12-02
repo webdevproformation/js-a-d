@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // string
+        console.log("bonjour".toLocaleUpperCase()) ;
+
+        // number
+        console.log(( 22.1234 ).toFixed(2));
+
+        // objet natif => Math 
+        // class statique => donner des valeurs de constante
+
+        Math.PI // 3.14....
+        Math.random(); // aléatoire entre 0 et 1
+        Math.floor(12.34); // sol
+        Math.ceil(12.34); // plafond
+        Math.round(12.34); // arrondi classique
+
+        // Regex : expression régulière
+        // Est ce que dans un string j'ai un motif (pattern) disponible ? => VRAIMENT vérifier que les informations sont conformes 
+
+        // email / telephone / url 
+        // Prénom  NOM => 
+
+        // Alain 
+        // Jean Alain 
+        // 1ère lettre Majuscule
+        // les lettres suivantes minuscules / Majuscule / Espace
+
+        let patternPrenom = /^[A-Z][a-zA-Z ]{1,}$/ ;
+
+        let prenom = "Alain";
+        let prenom2 = "Jean Alain ";
+
+        console.log(prenom.match( patternPrenom ));
+        console.log(prenom2.match( patternPrenom ));
+
+        // adresse internet => doit avoir la forme suivante 
+
+        // http://lettre/letrtreAZER1234/fichier.doc 
+        // http://lettre/letrtreAZER1234/fichier
+        // https://lettre/letrtreAZER1234/fichier
+
+        // pattern bête 
+
+        let pattern1 = /./ ; // . => n'importe quelle lettre AZ az 09 !: 
+        let pattern2 = /[a-zA-Z0-9 \.\$\/\^\-]/ ; // plage de caractères minuscules + Majuscule + tous les chiffres + lettres spéciales attention certains doivent être échappé avec un anti slash . / $ - ^ 
+        // important ce que j'attends sur un caractère
+
+        let pattern3 = /h[a-z]/; // tous les mots qui vont contenir ha hb hc  ..... hz   harriz    chat // OK !!   
+        // bonjour => KO 
+
+        let pattern4 = /^h[a-z]/
+        // tous les mots qui commencent par ha , hb ... hz
+        // harriz 
+        // haricot vert
+
+        let pattern5 = /^h[a-z]$/
+        // exactement ha hb hc .... hz = avec exactement 2 lettres 
+        // harriz => faux
+        
+        // https / http + ://  [minuscule / chiffre  .] {2 .. infini}
+
+        let pattern6 = /^(https|http):\/\/[a-z\/0-9\.]$/ 
+        // http://a
+        // https:///
+        let pattern7 = /^(https|http):\/\/[a-z\/0-9\.!]{1,}$/ 
+         // http://aaaaaa/00000/....../ => vrai 
+        // https://bonjour/les amis/ => faux 
+
+        // regex101.com
+
+        // créer le fichier 02-exo.html
+
+        // ce fichier contient une balise script 
+        // donner l'expression régulière qui permet de verifier les pattern suivants de téléphone
+
+        // 00.00.00.00.00
+        // 00 00 00 00 00
+        let adresse1
+    </script>
+</body>
+</html>
