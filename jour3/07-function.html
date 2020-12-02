@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // en javascript 
+        // tout est objet 
+        "hello".length ;
+        (12).toFixed(2)
+        //(true)
+        //undefined
+
+        function a(){}
+
+        // a.prototype // propriété
+        // a.bind() // méthode
+        // a.call() // méthode
+        // a.apply() // méthode 
+
+        // en js tout est objet même les fonctions => ce sont des objets 
+        // ces 3 méthodes => permettre de définir la valeur de this (si elle est utilisée dans les accolades )
+
+        function b (){
+            console.log(this);
+            console.log(this.length);
+        }
+
+        b();
+        // etant donné que b() est exécuté directement dans la page web
+        // this => window 
+
+        let tableau = [1, 2];
+        
+        let bPourTableau = b.bind(tableau);
+        bPourTableau();
+        // la méthode .bind() permet de donner le contexte de this 
+
+        let phrase = "bonjour les amis";
+        let bPhrase = b.bind(phrase);
+        bPhrase();
+
+        let c = function(){ 
+            return this.length; // window.length = 0
+        }.bind(tableau)
+        console.log(c());
+
+        // si vous utilisez le mot this dans une fonction 
+        // la valeur de this va dépendre du contexte d'exécution 
+        // b(); => this window qui appelle la fonction this == window
+        // utiliser .bind() permet de redéfinir la valeur de this
+        // dans le premier exemple this = tableau array
+        // dans le deuxième exemple this = phrase string
+
+        // this => utilise uniquement dans les class
+        // this => class mais aussi dans des fonctions 
+        // this ce n'est pas l'instance mais le contexte d'exécution
+        // la méthode .bind() permet de donner la valeur de l'exécution
+        // 08-function-suite.html
+    </script>
+</body>
+</html>
