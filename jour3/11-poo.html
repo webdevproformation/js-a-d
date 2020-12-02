@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // pour créer des class en javascript 
+
+        // ES6 a introduit des nouveaux mots clés class / extends / super
+        // rappeler les méthodes classiques 
+
+        // méthode à l'ancienne => prototype 
+        // créer une class => la première lettre du nom de la class en Majuscule
+        // signifie que c'est une variable spéciale 
+        class Formation {
+            // propriété de class let / var / const devant 
+            // donner une valeur par défaut
+            // dans les class : mais = 
+            // : à utiliser dans les objets 
+            // à la fin de l'instruction ; 
+            nom = "Javascript Avancé" ;
+            programme = { 
+                duree : 5,
+                unite : "jours"
+            };
+        }
+
+        // objet à partir de class Formation 
+        let f = new Formation();
+        console.log(f);
+        /*
+            f est un objet 
+            f = {
+                nom : "Javascript Avancé"  ,
+                programme : { 
+                    duree : 5,
+                    unite : "jours"
+                }
+            }
+        */
+
+        // en javascript tout est public => modifier n'importe où !! 
+
+        class Forme {
+            nbCote = 4 ;
+            couleur = "rouge";
+        }
+
+        let carre = new Forme();
+        console.log(carre.nbCote);
+
+        // extérieur de la class et de l'objet 
+        carre.nbCote = 10 ; // modifier une propriété
+        carre.surface = "20cm" ; // ajouter une propriété  ( hors de la class )
+        Forme.prototype.aire = "30cm"; // ajouter class une nouvelle propriété
+        console.log(carre);
+        console.log(carre.aire);
+        console.log(Forme);
+        // __proto__ // prototype
+        /* 
+        {
+            nbCote : 10,
+            couleur : "rouge"
+        } 
+        TypeScript ( prive / protected / public )
+        */
+
+        class Triangle{
+            nbCote ;
+            couleur ;
+            lieu ;
+            // la méthode constructor()
+            // va être exécutée automatiquement dès que l'on fait un new
+            // attention dans les fonctions il faut utiliser this
+            // pour accéder aux propriétés de la class 
+            constructor( cote , couleur , lieu ){
+                this.nbCote = cote ;
+                this.couleur = couleur ;
+                this.lieu = lieu ;
+            }
+        }
+
+        let t = new Triangle ( 2 , "red" , "dans un ordinateur"  )
+        console.log(t);
+
+        class Rectangle {
+            largeur ;
+            hauteur ;
+            constructor( l , h ){
+                this.largeur = l ;
+                this.hauteur = h ;
+            }
+        }
+        let r = new Rectangle()
+        r.largeur = 10;
+        r.hauteur = 12;
+        console.log(r)
+
+        let r2 = new Rectangle( 22 , 34 )
+        console.log(r2);
+
+        // dans une class on peut des attributs mais aussi des méthodes 
+        //function a(){}
+        //let b = function(){}
+        class Arbre{
+            nom = "Chêne";
+            taille = 40 ;
+            // méthodes 
+            // ne pas mettre le mot function
+            description = function(){
+                console.log(this.nom)
+            }
+            description2(){
+                console.log(this.nom + "dans le fonction 2")
+            }
+            description3 = () => {
+                console.log(this.nom + "dans le fonction 3")
+            }
+        }
+        let a = new Arbre();
+        a.description();
+        a.description2();
+        a.description3();
+
+        // static 
+        // set
+        // get
+        // extends 
+        // super 
+
+        class Courses {
+            budget = 20 ;
+            unite = "euros";
+            static liste = ["pomme", "poire"]
+            static description = function(){
+                console.log(2 + 3);
+                let budget = 20
+                console.log( this.liste ) 
+                // car liste est une propriete static
+                console.log( this.budget )
+                // pas possible car propriété n'est pas static
+                // c'est une propriété d'objet 
+            }
+        }
+        // static => utiliser des valeurs stockées dans la class
+        // sans avoir à passer par une instance 
+        console.log(Courses.liste);
+        console.log(Courses.budget); // il faut faire un new 
+        Courses.description();
+        // Math.PI // propriété
+        // Math.random()
+
+        // méthodes spéciales pour définir les variables de class 
+
+        class Fleur{
+            nom ;
+            constructor( nom ){
+                this.setNom(nom)
+            }
+
+            setNom(nom){
+                if(typeof(nom) == "string" ){
+                    this.nom = nom
+                }else {
+                    throw new Error("nom non conforme")
+                }
+            }
+            getNom(){
+                return this.nom ;
+            }
+        }
+
+        console.log(Fleur);
+
+        // héritage 
+
+        class Parent{
+            a = 2 ;
+            b = function(){
+                console.log("je suis la méthode b dans Parent")
+            }
+        }
+        class Enfant extends Parent{  
+            // override = modifier la méthode 
+            b = function(){
+                console.log("je suis la méthode b dans Enfant")
+            }
+
+        }
+        let e = new Enfant();
+        console.log(e);
+        e.b();
+
+        class Parent2{
+            nom ;
+            age ;
+            constructor( nom ,age  ){
+                this.nom = nom
+                this.age = age
+            }
+            b(){
+                return 2;
+            }
+        }
+        class Enfant2 extends Parent2{
+            prenom ;
+            constructor( nom ,age , prenom ){
+                super( nom ,age ); // executer le constructeur du parent
+                this.prenom = prenom
+            }
+            c(){
+                let r = super.b(); // supérieur 
+                console.log(r + 10 + this.age);
+            }
+        }
+
+        let e2 = new Enfant2( "Dupont" , 45 ,"Alain" );
+        // utilisation du constructeur de Enfant2
+        console.log(e2) ; 
+        e2.c();
+    </script>
+</body>
+</html>
