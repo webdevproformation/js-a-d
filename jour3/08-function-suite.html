@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Action 1</button>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, natus!</p>
+    <script>
+        document.querySelector("button").addEventListener( "click", function(){ 
+            // dans le DOM => étant donné que met this dans une fonction qui est une callback 
+            // this ici => button qui est cliqué qui va correspondre au contexte d'exécution this 
+            console.log(this);
+        })
+    </script>
+    <!-- 09-systeme-onglet.html -->
+</body>
+</html>
