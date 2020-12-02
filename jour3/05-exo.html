@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            let a = [ 1 , 2 , 4] ;
+            //1  Ajouter à la fin du tableau les 2 chaines de caractères suivantes 
+                Bonjour
+                les amis
+            
+            //2  supprimer la valeur 2 qui est située à l'index 1 du tableau
+            //3  ajouter entre 1 et 4 le texte suivant "je suis ici"
+            // 4 donner l'index de la valeur 4 dans la tableau 
+            //5  retourner un tableau qui contient toutes les valeurs sauf l'item "je suis ici"
+            //6 transformer le tableau a en un nouveau tableau dans lequelle chaque item est entouré de <h1>item </h1>
+        */
+
+        let a = [ 1 , 2 , 4] ;
+
+        // 1 plusieurs solutions possibles 
+        // a.push("Bonjour" , "les amis");
+        a.splice(a.length , 0 , "Bonjour" , "les amis");
+        console.log(a);
+
+        // 2 
+        a.splice(1 , 1);
+        console.log(a);
+        // 3
+        a.splice(1 , 0 , "je suis ici");
+        console.log(a);
+
+        //4 
+        console.log(a.indexOf(4)) //2
+
+        //5 .filter()
+        let b = a.filter( function( item ){
+            return item != "je suis ici";
+        } )
+        console.log(b);
+
+        // 6 .map()
+        let c = a.map( function( item ){ 
+            return `<h1>${item}</h1>`
+        } )
+        console.log(c);
+
+    </script>
+</body>
+</html>
