@@ -35,6 +35,9 @@
 
         // $.getJSON()
         // json placeholder
+        // opendata .gouv
+        // issy opendata 
+        // https://kanye.rest/
         $.getJSON("http://jsonplaceholder.typicode.com/posts", function( response ){
             let r = response.map(function(item){
                 return `<p>${item.title}</p>`
@@ -42,6 +45,31 @@
             $(".item2").html(r.join(""));
         } );
         // pas besoin de send / open / onload / JSON.parse()
+
+        // $.get("url",callback) 
+        $.get("http://jsonplaceholder.typicode.com/posts" , function(response){
+            console.log(response);
+            let r = response.map(function(item){
+                return `<p>${item.title}</p>`
+            });
+            $(".item3").html(r.join(""));
+        });
+
+        //$.post() // formulaire => exemple suivant 
+
+        // la dernière 
+
+        $.ajax({
+            url : "http://jsonplaceholder.typicode.com/posts" ,
+            method : "get",
+            success : function(response){ // si je recois une réponse du serveur en status  200 
+                let r = response.map(function(item){
+                    return `<p>${item.title}</p>`
+                });
+                $(".item4").html(r.join(""));
+            },
+            error : function(){} // si je reçois une réponse du serveur mais en status 500 / 400 
+        });
 
 
     </script>
