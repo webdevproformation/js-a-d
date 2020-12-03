@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let urlCorrect = "http://jsonplaceholder.typicode.com/comments";
+        let urlErrone = "http://jsonplaceholder.typicode.com/toto";
+        fetch(urlErrone)
+        .then( function(req){
+            return req.json()
+        })
+        .then( function(resultat){
+            console.log(resultat) // ici quand j'utilise urlCorrect
+        })
+        .catch( function(message){
+            console.log(message) // ici quand j'utilise urlErrone
+        }) ;
+    </script>
+</body>
+</html>

@@ -9,7 +9,6 @@
     <script>
         // autre manière de faire de l'ajax 
         //ES6  fetch()
-
         fetch("http://jsonplaceholder.typicode.com/comments")
             .then( function(){ } ) // si la réponse status 200
             .catch( function(){ }) // si la réponse status en erreur 400 / 500
@@ -23,10 +22,20 @@
             .then( function(json){
                 console.log(json) // vous avez une tableau de 500 items 
                 // json.map()
+                // parser = "comprendre" un texte à partir de règles grammaire
             } )
             .catch( function(){
 
             })
+            // rdv 15h42 => NodeJS 
+
+            /*
+                {
+                    nom : "Malik",
+                    formation : "JS"
+                }
+            */
+           // créer un fichier 09-last-ajax.html
     </script>
 </body>
 </html>
