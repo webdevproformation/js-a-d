@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // autre manière de faire de l'ajax 
+        //ES6  fetch()
+
+        fetch("http://jsonplaceholder.typicode.com/comments")
+            .then( function(){ } ) // si la réponse status 200
+            .catch( function(){ }) // si la réponse status en erreur 400 / 500
+        // fetch return une Promesse 
+
+        fetch("http://jsonplaceholder.typicode.com/comments")
+            .then(function(response){
+                console.log(response)
+                return response.json();
+            })
+            .then( function(json){
+                console.log(json) // vous avez une tableau de 500 items 
+                // json.map()
+            } )
+            .catch( function(){
+
+            })
+    </script>
+</body>
+</html>
