@@ -1,0 +1,40 @@
+<!-- 04-ajax.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <script>
+        // AJAX ?? AsynChrone Javascript And XML
+        // ensemble de technologies qui vont permettre au client = le navigateur
+        // de faire des demandes au Serveur et de se raffraichir en partie 
+
+        // en 2020 il existe plusieurs manières de faire de l'AJAX 
+
+        // new XMLHttpRequest() // intégré directement dans le navigateur
+        // fetch() => Ajouté récemment // intégré directement dans le navigateur
+        // utiliser jQuery  => $.ajax() // installer une librairie tiers
+        // React Librairie => Axios  // installer une librairie tiers
+
+        // 1er manière 
+        let requete = new XMLHttpRequest()
+        // requete est un objet 
+
+        requete.open(  )
+        // faire une décrire la demande au serveur
+        // récupérer des données qui sont stockées sur un serveur distant 
+        // google => json placeholder => http://jsonplaceholder.typicode.com/posts
+        requete.onload = function(){};
+        // lorsque les données sont reçues qu'est ce l'on en fait ? 
+        requete.send()
+        // envoyer la demande au server
+
+
+    </script>
+
+</body>
+</html>
