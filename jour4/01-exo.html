@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // class Forme
+        class Forme{
+            nbDeCote ;
+            couleur ;
+            constructor(nbDeCote , couleur){
+                this.setNbDeCote( nbDeCote );
+                //this.nbDeCote = nbDeCote
+                this.setCouleur( couleur );
+            }
+
+            setNbDeCote( nbDeCote ){
+                // est ce que nbDeCote est un nombre ?
+                // ?? ne pas utiliser les Regex 
+                let patternNombre = /^[0-9]{1,}$/;
+                // autres solutions possibles 
+                // let patternNombre = /^\d{1,}$/;
+                // if(typeof(nbDeCote) === "number"){ }
+                // !isNaN(nbDeCote)
+                // Number.isInteger(nbDeCote) 
+                if( patternNombre.test(nbDeCote) ){
+                    this.nbDeCote = nbDeCote
+                } else {
+                    throw new Error("nbCote Non Conforme");
+                }
+            }
+            setCouleur = (couleur) => {
+                if(typeof(couleur) === "string" && couleur.length > 0){ // "" est invalide
+                    this.couleur = couleur
+                } else {
+                    throw new Error("couleur Non Conforme");
+                }
+            }
+
+            getCouleur(){
+                return this.couleur;
+            }
+            getNbDeCote(){
+                return this.nbDeCote;
+            }
+        }
+        class Rectangle extends Forme{
+            /*pas besoin de recréer la constructeur dans l'enfant ou d'utiliser super()
+            super() uniquement si j'ai besoin d'ajouter un nouvel attribut dans Rectangle et que je veux utiliser le constructeur de Forme */
+            description(){
+                let nomClassQuiAppel = this.__proto__.constructor.name ;
+                console.log(`je suis un ${nomClassQuiAppel} à ${this.nbDeCote} cotés`);
+            }
+        }
+        let r = new Rectangle( 4 , "rouge" );
+        //debugger;
+        console.log(r.getCouleur());
+        // mais en js tout est public donc tu peux prendre directement le nom de l'attribut directement sans passer par le getter de couleur 
+        console.log(r.couleur);
+        r.description();
+
+        // VBA ?? => Excel ?? => Espion sur VBA une variable en particulier 
+        // 02-poo-prototypal.html
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!-- 02-poo-prototypal.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Avant ES6 et l'ajout des mot clés class / constructor / extends / super
+        // rappel la POO classique => les autres langages JAVA C# PHP
+        // on faisait déjà de la POO en javascript de la manière suivante :
+
+        // pour créer une class => utilisait des fonctions 
+        function Forme (nbCote , couleur){
+            let attributprivee = 1 ; // attribut privee
+            this.nbCote = nbCote ;
+            this.couleur = couleur ;
+            this.methode1 = function(){ }
+            function setAttributprivee(){} // méthode privee 
+        }
+        let f = new Forme(2, "rouge"); 
+        // console.log( Forme.setAttributprivee() ); // => Typescript 
+        // OUI 
+        // fonction constructrice 
+        /* ES6
+            class Forme{
+                constructor(nbCote , couleur ){
+                    this.nbCote = nbCote;
+                    this.couleur = couleur
+                }
+            }
+        */
+       // en javascript une fonction est un objet => propriété / méthodes
+       // automatiquement => propriété .prototype
+       console.log(Forme);
+       // 2 manières d'ajouter des méthodes 
+       // ajouter directement dans la fonction contructrice 
+       // Ajouter une méthode dans la prototype du la class 
+       Forme.prototype.methode2 = function(){}
+       Forme.methode3 = function(){} // créer une méthode static de class
+    </script>
+</body>
+</html>
