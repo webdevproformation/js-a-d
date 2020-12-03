@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section img{
+           /*  width: 100px;
+            border-radius: 10px; */
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        let requete = new XMLHttpRequest();
+        requete.open("get" , "http://jsonplaceholder.typicode.com/comments");
+        requete.onload = function(){
+            let response = JSON.parse(requete.responseText);
+            // requete.responseText => réponse du serveur au format Textuel "[{},{}]" => [{},{}]
+            //console.log(response);
+            let html = response.map(function( item ){
+                return `
+                    <section>
+                        <p>nom : ${item.name}</p>
+                        <img src="https://via.placeholder.com/450x100" alt="" width="120">
+                        <p>email : ${item.email}</p>
+                        <p>contenu : <br>  ${item.body}</p>
+                        <hr>
+                    </section>
+                `;
+            });
+            document.querySelector("div").innerHTML = html.join("");
+        }
+        requete.send();
+        // fin AJAX 
+        // NodeJS => promesse
+        // TypeScript 
+    </script>
+</body>
+</html>
