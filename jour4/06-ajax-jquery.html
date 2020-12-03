@@ -29,6 +29,20 @@
             $.post()
             $.ajax()
         */
+       // $("...").load("url") 
+       // idéal pour remplir une balise html avec un fichier externe  le contenu d'un fichier externe
+        $(".item1").load("06-menu.html");
+
+        // $.getJSON()
+        // json placeholder
+        $.getJSON("http://jsonplaceholder.typicode.com/posts", function( response ){
+            let r = response.map(function(item){
+                return `<p>${item.title}</p>`
+            });
+            $(".item2").html(r.join(""));
+        } );
+        // pas besoin de send / open / onload / JSON.parse()
+
 
     </script>
 </body>
