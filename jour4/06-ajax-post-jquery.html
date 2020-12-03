@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        pouvoir voir faire un post
+        le mieux c'est d'avoir un formulaire dans la navigateur
+    -->
+    <form>
+        <label for="data">id</label>
+        <!-- attribut for => permet si je clique sur un élément mettre le focus
+        sur l'id data -->
+        <input type="text" id="data" class="information">
+        <br>
+        <input type="text" class="title">
+        <br>
+        <textarea class="body"></textarea> <br>
+        <input type="submit">
+    </form>
+    <div class="result"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $("form").on("submit", function(e){
+            e.preventDefault(); // bloquer le rechargement de page 
+            let v = $(".information").val();
+            let titre = $(".title").val();
+            let body = $(".body").val();
+            if(v.length > 0){
+                // lancer le traitement en ajax
+                // sécurité 
+                $.post( 
+                    "http://jsonplaceholder.typicode.com/posts" ,
+                    { id : v , title:titre ,body : body   } ,
+                    function(r){
+                        console.log(r);
+                    }
+                    );
+            } else {
+                $(".result").html("Veuillez compléter le champ avant soumission")
+            }
+        })
+        // $.post("url", { champ , form } , function(r){ })
+        // url à appeler = string 
+        // les champs du formulaire = objet literal
+        // la réponse du serveur = callback
+    </script>
+</body>
+</html>
