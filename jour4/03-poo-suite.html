@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 03-poo-suite.html -->
+    <script>
+        // Avant 2015, on faisait de la POO en javascript de la manière suivante 
+        // cette manière utiliser un concept central de javascript 
+        // manière plus visible => prototype 
+        // en javascript tout est objet 
+        // quelquesoit la variable que vous créez en javascript c'est une objet 
+        // je crée un string 
+        let a = "bonjour";  
+        // en plus de la valeur "bonjour" a dispose en + (manière automatique) des propriétés et des méthodes 
+        a.length ; // propriété de String 
+        a.slice(0 ,  3); // méthode de String
+        console.log(a);
+        // importante à connaitre prototype 
+        console.log(a.__proto__)
+        // grâce au prototype => que javascript va donner toutes les méthodes 
+        // en fonction du type de variable que vous allez créer "hérité du prototype du type String"
+        // grâce à la propriété __proto__ que a dispose des méthodes 
+        // .slice(0 ,  3); // substring() .... toLocalUpperCase()
+
+        // maintenant que l'on sait ce point 
+        // avant utilisait les fonctions comme constructeur de class
+
+        // Attention à la majuscule 
+        function Voiture(marque){
+            this.marque = marque ; // attribut de la class Voiture 
+            this.methode1 = function(){}
+
+        }
+        // méthodes 3 manières d'ajouter des méthodes à notre fonction constructrice
+        Voiture.methode2 = function(){}; // méthode statique
+        Voiture.prototype.methode3 = function(){} // utilisation du prototype 
+
+        let v = new Voiture("Toyota");
+        console.log(v);
+
+        // la différence par rapport à la nouvelle manière de faire de la poo => créer des propriétés privées / méthodes privées 
+
+        //let prenom ;
+
+        function Fleur ( nom ){
+            let name  ; // attribut privé
+            let setNom = function ( nom ){ // méthode privée
+                name = nom ;
+            }
+            setNom(nom);  // exécuter la fonction privée
+            this.getNom = function (){ // méthode public 
+                return name ;
+            }// cette manière d'écrire 
+        }
+        let f = new Fleur ("jasmin");
+        console.log(f.name); // attribut inaccessible
+        //console.log(f.setNom("rose")); // méthode inaccessible 
+        console.log(f.getNom()); // jasmin 
+
+        // Oui il faut connaitre => plein de librairie qui utilisent ces concepts / React / Vus JS
+
+        // obsolète NON 
+
+        class Maison{
+            methode(){} // elle est en fait dans le prototype
+        }
+        //Maison.prototype.methode2 = function(){}
+
+        let m = new Maison();
+        console.log(m);
+        // quand vous créez une méthode dans une class
+        // en fait vous ajoutez une méthode au prototype de la class
+
+        // Héritage à l'ancienne 
+
+        function Parent( nom ){
+            this.nom = nom
+        }
+        Parent.prototype.methode = function(){}
+
+        function Enfant(nom){
+            Parent.call(this , nom); // exécuter le constructeur de parent
+        }
+        Enfant.prototype = Parent.prototype; // récupérer toutes les méthodes du Parent
+        let e = new Enfant("Alain");
+        console.log(e);
+    </script>
+</body>
+</html>
