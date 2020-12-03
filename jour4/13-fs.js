@@ -13,7 +13,28 @@
 
 let fs = require("fs"); // télécharger un module natif de NodeJS 
 // import fs from "fs"
-fs.writeFile("14-exemple.js" , `un peu de contenu` , function(err, message){
+let pageAccueil = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>`;
+// string 
+// tableau 
+
+fs.writeFile("14-exemple.html" , pageAccueil , function(err, message){
     if(err) throw err; 
     console.log("fichier créé")
 });
+
+// Node JS un peu plus / NPM (Node Package Manager)
+// package.json
+// TypeScript 
+// https://formation.webdevpro.net/typescript
+// login: typescript
+// mdp : typescript
