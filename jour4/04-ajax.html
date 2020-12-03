@@ -21,16 +21,39 @@
         // React Librairie => Axios  // installer une librairie tiers
 
         // 1er manière 
-        let requete = new XMLHttpRequest()
+        let requete = new XMLHttpRequest() ;
         // requete est un objet 
 
-        requete.open(  )
+        requete.open( "get" , "http://jsonplaceholder.typicode.com/posts" ) ;
         // faire une décrire la demande au serveur
         // récupérer des données qui sont stockées sur un serveur distant 
         // google => json placeholder => http://jsonplaceholder.typicode.com/posts
-        requete.onload = function(){};
+        // API = Application Program Interface 
+        // WebService 
+        requete.onload = function(){ 
+            console.log(requete.responseText);
+            let responseServeur = requete.responseText ;
+            // transformer la réponse qui est en format text qui contient un JSON 
+            // vrai JSON => tableau qui contient des objets 
+            let responseJSON = JSON.parse(requete.responseText);
+            console.log(responseJSON); // collection 
+            // restFull // oui c'est comme ça 
+            // get => récupérer des données
+            // post => créer une entrée
+            // put / patch => update
+            // delete => suppr 
+            let html = responseJSON.map( function( item ){
+                return `
+                    <article>
+                        <h2>${item.title}</h2>
+                        <p>${item.body}</p>
+                    </article>
+                `;
+            } );
+            document.querySelector("div").innerHTML = html.join("");
+        };
         // lorsque les données sont reçues qu'est ce l'on en fait ? 
-        requete.send()
+        requete.send() ;
         // envoyer la demande au server
 
 
