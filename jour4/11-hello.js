@@ -14,4 +14,13 @@ mercredi
 
 afficher la tableau en intégralité dans le terminal de Visual Studio 
 
+// Babacar => git => https://git-scm.com/ > télécharger une fichier .exe 
+// installer // redémmarer ton Visual Studio pour que ça fonctionne 
+// Path > Variable Environnement system > path > modifier > C:\Program Files\Git\cmd
+// OK OK OK 
+// redémarrer visual Studio 
+// Prestashop // Linux 
+
+echo > 12-exo.js
+
 */ 
