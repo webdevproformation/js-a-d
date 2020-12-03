@@ -14,15 +14,15 @@
 </head>
 <body>
     <form>
-       <!--  (label+input)*3 -->
-        <label for="nom">Nom</label>
+       <!--  (label+input)*3 --> 
+        <label for="nom">Nom</label> 
         <input type="text" class="nom" id="nom">
-        <label for="email">Email</label>
-        <input type="email" class="email" id="email">
-        <label for="contenu">contenu</label>
-        <input type="text" class="contenu" id="contenu">
-        <input type="submit">
-    </form>
+        <label for="email">Email</label> 
+        <input type="email" class="email" id="email"> 
+        <label for="contenu">contenu</label> 
+        <input type="text" class="contenu" id="contenu"> 
+        <input type="submit"> 
+    </form> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         $("form").on("submit" , function(e){
@@ -31,7 +31,6 @@
             let email = $(".email").val();
             let contenu = $(".contenu").val();
             if(nom.length > 0 && email.length >0 && contenu.length >0){
-
                 $.post(
                     "http://jsonplaceholder.typicode.com/comments",
                     {
