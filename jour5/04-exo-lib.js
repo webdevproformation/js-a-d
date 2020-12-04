@@ -1,5 +1,5 @@
-function getName( data , keyName , indice  ){
-    let r = data[indice][keyName];
+function getName( data , keyName , index  ){
+    let r = data[index][keyName];
     console.log(r);
 }
 
