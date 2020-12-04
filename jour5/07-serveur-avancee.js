@@ -50,3 +50,22 @@ server.listen(4000 , "localhost");
 // c ou http://localhost:4000  => /
 // http://localhost:4000/article/2 => /article/2
 // http://localhost:4000/presentation?page=2 => /presentation?page=2
+
+/*
+    créer un nouveau fichier 08-exo.js
+
+    ce fichier contient un serveur Node qui écoute sur le port 3200 à
+    l'adresse localhost 
+
+    importer le fichier 04-exo-data.js
+
+    1 si un client appelle l'adresse http://localhost:3000
+    // Bienvenu sur l'API 
+
+    2 si un client appelle l'adresse https://localhost:3000/api/json-generator
+    retourner le contenu de la variable data 
+
+    3 si un client appelle l'adresse https://localhost:3000/api/json-generator/0
+    retourner le 1er item de variable data 
+
+*/ 
