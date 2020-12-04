@@ -37,3 +37,8 @@ class C{ // création de class version ES6
 // typer tes variables 
 
 // code que tu écris en ts => ROBUSTE 
+// npm i -g typescript 
+
+// node 01-hello.js
+
+// 02-typage.ts
