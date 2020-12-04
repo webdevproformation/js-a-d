@@ -21,7 +21,7 @@ interface Courses {
     items : Array<string|number>,
     budget : number ,
     unite : string
-};
+}; // vérifier ton code AVANT l'exécution 
 let liste4:Courses = {
     items : ["pêche", 4, "poire", 3, "ananas" , 2],
     budget : 40 ,
@@ -37,3 +37,19 @@ let liste5 : Array<Produit> = [
     {id: 2 , nom : "poire" , quantite : 3},
     {id: 3 , nom : "ananas" , quantite : 2},
 ];
+
+// interface il est possible de rendre des propriétés facultatives 
+
+interface Ville {
+    nom : string ,
+    lat : number ,
+    long : number ,
+    population? : number // ? permet de rendre le propriété facultative
+}
+
+let agglomeration : Array<Ville> = [
+    { nom : "Paris" , lat : 1, long : 1 },
+    { nom : "Marseille", lat :2 , long : 2 , population : 123 }
+] ;
+
+// 06-class.ts
