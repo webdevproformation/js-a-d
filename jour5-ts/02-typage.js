@@ -1,4 +1,3 @@
-//export = {};
 // 02-typage.ts
 // spéficifique (l'ajout de typescript)
 let a = "bonjour"; // on type la variable a 
@@ -16,6 +15,7 @@ function attention() {
 let autreFonction = (a) => {
     console.log("autre fonction");
 };
+export {};
 // tsc 02-typage.ts => version ES3
 // tsc  02-typage.ts --target es6
 // tsc  02-typage.ts --target es6 -w
@@ -33,3 +33,7 @@ let autreFonction = (a) => {
 // convertir le fichier 03-exo.ts => 
 // 03-exo.js (version6)
 // executer le fichier 03-exo.js avec node
+// pause dans 15 min 
+// commencer l'exo à toute suite !!
+// pour éviter l'erreur de variable dupliquée
+// export {} => laisse jusqu'à 15h51 et corrigé !

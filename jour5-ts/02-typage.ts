@@ -1,4 +1,4 @@
-//export = {};
+export {};
 // 02-typage.ts
 
 // spéficifique (l'ajout de typescript)
@@ -49,3 +49,8 @@
 // 03-exo.js (version6)
 
 // executer le fichier 03-exo.js avec node
+// pause dans 15 min 
+// commencer l'exo à toute suite !!
+
+// pour éviter l'erreur de variable dupliquée
+// export {} => laisse jusqu'à 15h51 et corrigé !
