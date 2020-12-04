@@ -59,13 +59,18 @@ server.listen(4000 , "localhost");
 
     importer le fichier 04-exo-data.js
 
-    1 si un client appelle l'adresse http://localhost:3000
+    1 si un client appelle l'adresse http://localhost:3200
     // Bienvenu sur l'API 
 
-    2 si un client appelle l'adresse https://localhost:3000/api/json-generator
+    2 si un client appelle l'adresse https://localhost:3200/api/json-generator
     retourner le contenu de la variable data 
 
-    3 si un client appelle l'adresse https://localhost:3000/api/json-generator/0
+    3 si un client appelle l'adresse https://localhost:3200/api/json-generator/0
     retourner le 1er item de variable data 
 
+    // rdv dans 1 h => 13h33 bon appétit tout le monde !!! 
+    // à toute suite !!  
+
+    // hello hello ?
+    // j'espère que votre repas a été excellent !! 
 */ 
