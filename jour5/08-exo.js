@@ -6,12 +6,13 @@ let { data } = require("./04-exo-data");
 let server = http.createServer();
 
 server.on("request", function(req, res){
-
+    // le paramètre req = request permet de savoir quel adresse internet est utilisée côté client 
+    // http://localhost:3200
     if(req.url === "/"){
         res.write("Bienvenu sur l'API");
         res.end();
     }
-
+    //http://localhost:3200/api/json-generator
     if(req.url === "/api/json-generator"){
         // texte que l'on renvoi mais un json  => modifier l'entete de la réponse
         // mieux 
@@ -19,6 +20,7 @@ server.on("request", function(req, res){
         res.write(JSON.stringify(data));
         res.end();
     }
+    // http://localhost:3200/api/json-generator/0
     let patternUrl = /^\/api\/json-generator\/[0-9]{1,}$/;
     if(req.url.match(patternUrl)){
         let tabUrl = req.url.split("/");
@@ -35,8 +37,8 @@ server.on("request", function(req, res){
         }
     }
 });
-
-
 server.listen(3200, "localhost", function(){
     console.log("le serveur est démarré et ecoute le port 3200");
 }); // 3ème argument de listen() callback 
+
+
