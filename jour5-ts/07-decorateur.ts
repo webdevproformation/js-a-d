@@ -44,3 +44,7 @@ class Menu{
         this.html = html ;
     }
 } 
+
+// support https://formation.webdevpro.net/typescript // https://formation.webdevpro.net/js-avancee 
+// mot qui peuvent changer durée de vie 6 mois 
+// malik.h@webdevpro.net
