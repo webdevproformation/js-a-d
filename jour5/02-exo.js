@@ -18,7 +18,7 @@ Voiture.prototype.description = function(){
 }
 let v = new Voiture( "Béatrice" , "VW" );
 console.log(v);
-v.description()
+v.description() ;
 
 // dans le terminal possibilité d'utiliser la touche tabulation
 // elle permet de faire de l'autocomplétion 
