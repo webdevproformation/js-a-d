@@ -27,3 +27,33 @@ division( 10 , 2); // 5
 
 // node 03-modules.js
 
+// dans le dossier jour5 créer 3 fichiers 
+
+// 04-exo.js // 04-exo-data.js // 04-exo-lib.js
+
+// dans le fichier 04-exo-data.js => copier coller un fichier json depuis le site json generator
+// stocker dans une variable data qui vous allez exporter 
+
+// dans le fichier 04-exo-lib.js => créer un fonction getName 
+// deux paramètres keyName // indice 
+// afficher dans la console le nom à l'indice concerné 
+/*
+[ 
+    { 
+        name : "Alain"
+    },{
+        name : "Béatrice"
+    }
+]
+getName("name", 0) => "Alain"
+getName("name", 1) => "Béatrice"
+*/
+
+// importer data et la fonction dans 04-exo.js
+
+// utiliser getName("name", 3)
+// utiliser getName("email", 0)
+
+
+
+
