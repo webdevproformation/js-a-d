@@ -38,3 +38,10 @@ fs.writeFile("14-exemple.html" , pageAccueil , function(err, message){
 // https://formation.webdevpro.net/typescript
 // login: typescript
 // mdp : typescript
+
+// Merci bonne soirée !!!!!!!!!!!!!! A demain !
+
+// hello hello !!!!!!!!!!!!!!!
+// Dernier jour !! 
+
+
