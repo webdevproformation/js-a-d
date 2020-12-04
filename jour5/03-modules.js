@@ -51,9 +51,11 @@ getName("name", 1) => "Béatrice"
 
 // importer data et la fonction dans 04-exo.js
 
-// utiliser getName("name", 3)
+// utiliser getName("name", 3) 
 // utiliser getName("email", 0)
+// pause => 15 min bon café tout le monde à toute suite !! 
 
-
+// hello hello !
+// 10h50 => Correction !
 
 
